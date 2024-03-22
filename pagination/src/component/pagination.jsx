@@ -23,11 +23,16 @@ const Pagination = () => {
   };
 
   const nextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, Math.ceil(employees.length / 10)));
+    const totalPages = Math.ceil(employees.length / 10);
+    if (currentPage < totalPages) {
+      setCurrentPage(prevPage => prevPage + 1);
+    }
   };
 
   const prevPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+    if (currentPage > 1) {
+      setCurrentPage(prevPage => prevPage - 1);
+    }
   };
 
   const lastIndex = currentPage * 10;
