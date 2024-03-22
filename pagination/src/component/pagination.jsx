@@ -63,7 +63,7 @@ const Pagination = () => {
         </tbody>
       </table>
       <div className={styles.buttons}>
-        <button onClick={prevPage} disabled={currentPage === 1}>Previous</button>
+        <button onClick={prevPage}>Previous</button>
         <span>Page {currentPage}</span>
         <button onClick={nextPage} disabled={currentPage === Math.ceil(employees.length / 10)}>Next</button>
       </div>
